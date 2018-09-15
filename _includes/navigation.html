@@ -1,0 +1,41 @@
+<nav class="pl-sidebar">
+<!--     <ul class="nav nav-stacked">
+{% for c in site.collections %}
+<li class="category">{{c.label}}</li>
+{% for p in site[c.label] %}
+<li><a href="#">{{p.title}}</a></li> 
+{% endfor %}
+{% endfor %}
+    </ul> -->
+    <ul class="nav nav-stacked">
+        {% assign categories = site.collections | where_exp:"item","item.label != 'posts'" | sort: 'index' %}
+        {% for c in categories %}
+                <li class="category">{{c.label}}</li>
+                {% for p in site[c.label] %}
+                    {% if p.draft != true and p.hidden != true %}
+                        {% if p.preview != true or site.includePreviews == true %}
+                            <li {% if p.url == page.url %} class="active" {% endif %} >
+                                <a {% if c.label == 'inspiration' %} target="_blank" {% endif %} href="{{site.baseurl}}{{ p.url }}"> {{ p.title }} </a>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+        {% endfor %}
+    </ul>
+    <!-- <ul class="nav nav-stacked">
+        {% for c in site.doctypes %}
+            <li class="category">{{c}}</li>
+            {% for p in site.pages %}
+                {% if p.url contains c %}
+                    {% if p.draft != true and p.hidden != true %}
+                        {% if p.preview != true or site.includePreviews == true %}
+                            <li {% if p.url == page.url %} class="active" {% endif %} >
+                                <a {% if c == 'inspiration' %} target="_blank" {% endif %} href="{{site.baseurl}}{{ p.url }}"> {{ p.title }} </a>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </ul> -->
+</nav>

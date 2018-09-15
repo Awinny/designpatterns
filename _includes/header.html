@@ -39,3 +39,25 @@
     <!--[if lt IE 9]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
+    <header class="pl-header navbar navbar-fixed-top navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="{{site.homeurl}}/" class="navbar-brand"><strong>USPTO</strong> <span class="light">Design</span></a>
+                <button type="button" class="nav-collapse btn btn-link"><i class="icon icon-inverse icon-bars"></i></button>
+                <button data-toggle="collapse" data-target="#pl-navbar-collapse" type="button" class="btn navbar-toggle collapsed"><i class="icon icon-inverse icon-angle-down"></i></button>
+            </div>
+            <div class="navbar-collapse collapse" id="pl-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li {% if page.title == 'Library' %} class="active" {% endif %} >
+                        <a href="{{site.baseurl}}/">Library</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{{ site.repository.url }}" title="View on Github" ><i class="icon icon-inverse icon-github"></i> &nbsp; View on Github</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>

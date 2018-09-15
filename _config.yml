@@ -1,18 +1,8 @@
 # Jekyll will exclude these files during compilation
 exclude:
-  - CONTRIBUTING.md
   - README.md
   - TERMS.md
-  - todo.md
-  - front
-  - node_modules
-  - bower_components
-  - usptostrap
-  - bower.json
-  - package.json
   - LICENSE
-  - salt
-  - Vagrantfile
 
 # Whether or not to include docs that are marked as preview
 includePreviews: true
@@ -29,16 +19,13 @@ baseurl: "/designpatterns"
 # The url for the home page of the design library
 homeurl: "/designpatterns"
 
-# Set the default layout for everything in the docs folder to _layouts/pattern.html
+# Set the default layout for everything in the categories folder to _layouts/default.html
 defaults:
-  - scope:
-      path: "docs"
+  - 
+    scope:
+      path: ""
     values:
-      layout: "pattern"
-  - scope:
-      path: "docs/guides"
-    values:
-      layout: "guide"
+      layout: "default"
 
 # All email links will use this variable
 email: contactUXD@uspto.gov?subject=USPTO UI Design Library
@@ -48,26 +35,18 @@ repository:
   name: uspto/designpatterns
   url: https://github.com/uspto/designpatterns
 
-# The latest stable version
-version: 1.6.4
-
-# The list of all versions, which are referenced on the home page
-versions:
-  - name: 1.6.4
-    url: /designpatterns/1.x/docs
-  - name: future
-    url: /designpatterns/docs
-
-# The categories for the side navigation. These correspond to the folders under the /docs folder
-doctypes:
-  - foundation
-  - components
-  - patterns
-  - inspiration
-
-guidetypes:
-  - project
-  - research
-  - requirements
-  - design
-  - evaluation
+# The categories for the side navigation. These correspond to the folders under the /categories folder
+collections_dir: categories
+collections:
+  foundation:
+    output: true
+    index: 1
+  components:
+    output: true
+    index: 2
+  patterns:
+    output: true
+    index: 3
+  inspiration:
+    output: true
+    index: 4

@@ -1,9 +1,7 @@
 USPTO UI Design Library
 ==============
 
-- [View the UI Design Library](https://uspto.github.io/designpatterns/)
-- [Contributing](CONTRIBUTING.md)
-- [How-to: Using the UI Design Library in your project](howto.md)
+- [View the UI Design Library](https://awinny.github.io/designpatterns/)
 - [Terms](TERMS.md)
 - [License](LICENSE)
 
@@ -11,59 +9,11 @@ Have feedback or questions about the UI Design Library? [Create an issue!](https
 
 #### About this repository
 
-This is the source code repository for the [USPTO UI Design Library](https://uspto.github.io/designpatterns/). The site is powered by [Jekyll](http://jekyllrb.com/), a static site generator that plays well with [Github Pages](https://help.github.com/articles/using-jekyll-with-pages/). 
-
-#### Want to contribute?
-See our [CONTRIBUTING.md](CONTRIBUTING.md) file for contribution guidelines.
+This is the source code repository for the [USPTO UI Design Library](https://uspto.github.io/designpatterns/). The site is powered by [Jekyll](http://jekyllrb.com/), a static site generator that plays well with [Github Pages](https://help.github.com/articles/using-jekyll-with-pages/).
 
 ---
 
 ### Building & running locally
-
-##### Using Vagrant
-
-With [Vagrant](https://www.vagrantup.com/) and [Virtualbox](https://www.virtualbox.org/) installed, do:
-```
-vagrant up
-```
-Once that's done, which will take a while the first time through, do:
-```
-vagrant ssh
-cd /vagrant
-```
-
-Now, skip ahead to [Running the documentation](#running-the-documentation).
-
-
-
-##### Not using Vagrant
-You will need to [install Jekyll](http://jekyllrb.com/docs/installation/). You will also need to [install Node.js](http://nodejs.org/download/). Node.js powers the front-end build and dependency management tools [Grunt](http://gruntjs.com/) and [Bower](http://bower.io/).
-
-Once Jekyll and Node.js are installed, ensure you have Grunt and Bower installed globally with:
-```
-npm install grunt-cli -g
-npm install bower -g
-```
-
-Then install the project's dependencies with:
-```
-npm install
-bower install
-```
----
-#### Running the documentation
-This project can be built with SASS(Beta) or LESS. The SASS assets are currently in beta and you may encounter minor correctable visual bugs.
-
-To build the front-end assets (LESS/CSS/JS) with:
-```
-grunt build
-```
-
-(Beta) To build the front-end assets (SASS/CSS/JS) with:
-```
-grunt buildSass
-```
- __Note:__ The SASS files require your project to install [Bootstrap Sass](https://github.com/twbs/bootstrap-sass) with NPM. The SASS files are looking for a 'node_modules' folder.
 
 Run the project with Jekyll:
 ```
