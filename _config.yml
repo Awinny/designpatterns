@@ -4,17 +4,17 @@ email: contactUXD@uspto.gov?subject=USPTO UI Design Library
 
 # Repository information, which is used for links like "View on Github"
 repository:
-  name: uspto/designpatterns
-  url: https://github.com/uspto/designpatterns
+  name: uspto/ux-library
+  url: https://github.com/uspto/ux-library
 
 # Whether or not to include docs that are marked as preview
 includePreviews: true
 
 # All links in the design library will start with this baseurl
-baseurl: "/designpatterns"
+baseurl: "/ux-library"
 
 # The url for the home page of the design library
-homeurl: "/designpatterns"
+homeurl: "/ux-library"
 
 # Makes it so that generated page urls will not end with .html
 permalink: :path
