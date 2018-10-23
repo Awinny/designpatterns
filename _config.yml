@@ -7,17 +7,15 @@ repository:
   name: uspto/ux-library
   url: https://github.com/uspto/ux-library
 
-# Whether or not to include docs that are marked as preview
-includePreviews: true
-
 # All links in the design library will start with this baseurl
 baseurl: "/ux-library"
 
 # The url for the home page of the design library
 homeurl: "/ux-library"
 
-# Makes it so that generated page urls will not end with .html
-permalink: :path
+mode: app
+
+brand: scania
 
 staticurl: https://static.scania.com/cds/awinny/tmp
 
@@ -27,21 +25,6 @@ kramdown:
   auto_ids: true
   parse_block_html: true
 
-# Set the default layout for everything in the categories folder to _layouts/default.html
-defaults:
-  - 
-    scope:
-      path: ""
-    values:
-      layout: "default"
-
-# Sections are kept here to be able to set render order
-sections:
-  - foundation
-  - components
-  - patterns
-  - inspiration
-
 # Jekyll will exclude these files during compilation
 exclude:
   - README.md
@@ -50,9 +33,13 @@ exclude:
 
 # Setting for releases output structure
 collections:
+  pages:
+    permalink: /:path
   releases:
-    output: true
     permalink: /v/:path
+  api:
+    output: true
+    permalink: /api/:path/index:output_ext
   assets:
     output: true
     permalink: /dist/:path

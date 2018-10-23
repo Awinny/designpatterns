@@ -1,12 +1,20 @@
-{% include releases.html %}
-{% include header.html %}
-<div class="pl-container">
+<!DOCTYPE html>
+<html lang="en-GB" class="corporate-ui">
+<head>
+  {% include head.html %}
+</head>
+<body class="{{mode}} {{brand}} {% raw %}{{main.state.current.name}}{% endraw %}">
+  {% include header.html %}
+
+  <c-main-content>
     {% include navigation.html %}
-    <section class="pl-content">
-        {% if page.preview == true %}
-            <div class="pl-preview-header">This document is a preview.</div>
-        {% endif %}
-        {{ content }}
-    </section>
-</div>
-{% include footer.html %}
+
+    <main ui-view></main>
+
+  </c-main-content>
+
+  {% include footer.html %}
+
+  {% include libs.html %}
+</body>
+</html>

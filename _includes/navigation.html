@@ -1,23 +1,13 @@
-<nav class="pl-sidebar">
-    <ul class="nav nav-stacked">
-        {% assign pages = site.pages %}
-        {% if version != "master" %}
-            {% assign pages = site.releases | where_exp:"item","item.url contains version" %}
-        {% endif %}
-
-        {% for c in site.sections %}
-            <li class="category">{{c}}</li>
-            {% for p in pages %}
-                {% if p.url contains c %}
-                    {% if p.draft != true and p.hidden != true %}
-                        {% if p.preview != true or site.includePreviews == true %}
-                            <li {% if p.url == page.url %} class="active" {% endif %} >
-                                <a {% if c == 'inspiration' %} target="_blank" {% endif %} href="{{site.baseurl}}{{p.url}}">{{p.title}} </a>
-                            </li>
-                        {% endif %}
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
-    </ul>
-</nav>
+{% raw %}
+<c-main-navigation>
+  <primary-items>
+    <nav-item
+      ng-repeat="item in main.navigation | filter:{abstract:'!true'}"
+      ng-attr-text="{{item.text}}"
+      ng-attr-children="{{item.children}}"
+      ng-attr-location="{{item.url}}"
+      ng-attr-caption="{{item.text}}"
+      ng-attr-active="{{item.name == main.state.current.name.split('_')[0]}}"></nav-item>
+  </primary-items>
+</c-main-navigation>
+{% endraw %}

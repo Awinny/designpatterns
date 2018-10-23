@@ -1,0 +1,17 @@
+---
+layout: null
+---
+{% capture side_navigation %}{% include side_navigation.html %}{% endcapture %}
+[
+  {% for page in site.pages %}
+    {
+      "name": "{{ page.id | remove: '/index' | remove_first: '/' | replace: '/','_' }}",
+      "text": "{{ page.title }}",
+      "categories": "{{ page.categories }}",
+      "url": "{{ page.url | remove: '/index' }}",
+      "index": {% if page.index %}{{ page.index }}{% else %}null{% endif %},
+      "hierarchy": {{ page.url | remove: '/index' | remove_first: '/' | split: '/' | size }},
+      "template": "<section><div class='{% if page.fullbleed %}container-fluid{% else %}container{% endif %}'>{% if page.sidenav %}{{ side_navigation | strip_newlines | replace: '"', "'" }}{% endif %}{{ page.content | markdownify | strip_newlines | replace: '"', "'" }}</div></section>"
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

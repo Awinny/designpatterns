@@ -2,3 +2,51 @@
 # This will contain ux-library specific style
 ---
 
+main {
+  overflow: hidden;
+}
+main > section {
+  padding: 30px 0;
+}
+h1 + h2,
+h1 + template + h2 {
+  font-size: 5.4rem;
+  font-weight: normal;
+}
+
+.navbar-default .navbar-nav > .active > a {
+  background-color: transparent;
+}
+nav.side-navigation {
+  padding-top: 15px;
+  font-size: 14px;
+
+  li {
+
+    a {
+      padding: 5px 15px;
+      text-transform: none;
+      font-weight: normal;
+    }
+
+    > ul {
+      padding-left: 10px;
+    }
+  }
+}
+
+.home main img {
+  width: auto;
+  height: auto;
+  min-height: 128px;
+  min-width: 128px;
+  margin: 10% 5% 0;
+}
+
+// Should be included in a new variation later on...
+c-teaser-variation-2 teaser-item {
+  width: 33%;
+}
+c-teaser-variation-2 teaser-item h2 {
+  font-family: "Scania Sans Headline";
+}
